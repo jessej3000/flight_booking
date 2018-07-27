@@ -21136,8 +21136,8 @@ var App = function (_Component) {
 		var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
 		_this.state = {
-			seatsInRow: seatsPerRow, //[0,0,0,0,0,0,0,0,0,0],//
-			rowsCount: numberOfRows, //[0,0,0],//
+			seatsInRow: seatsPerRow,
+			rowsCount: numberOfRows,
 			seats: seatIndexes,
 			selected: assignmentOrder,
 			abc: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'],
@@ -21152,18 +21152,13 @@ var App = function (_Component) {
 
 	_createClass(App, [{
 		key: 'componentDidMount',
-		value: function componentDidMount() {
-			/*let {seats,selected,names} = this.state
-   	console.log(":::: " + names)*/
-		}
+		value: function componentDidMount() {}
 	}, {
 		key: 'setBooking',
 		value: function setBooking() {}
 	}, {
 		key: 'addBooking',
-		value: function addBooking(bookingInfo) {
-			//console.log(bookingInfo);
-		}
+		value: function addBooking(bookingInfo) {}
 	}, {
 		key: 'deleteBooking',
 		value: function deleteBooking(booking) {
@@ -21204,7 +21199,7 @@ var App = function (_Component) {
 			bodyFormData.set('seats', seats);
 			bodyFormData.set('aorder', selected);
 
-			_axios2.default.post('http://localhost:8282/bookflight/', bodyFormData).then(function (response) {
+			_axios2.default.post('http://ec2-35-163-18-92.us-west-2.compute.amazonaws.com:9393/bookflight/', bodyFormData).then(function (response) {
 				console.log(response);
 			});
 		}
@@ -21253,7 +21248,7 @@ var App = function (_Component) {
 			bodyFormData.set('seats', DBSeats);
 			bodyFormData.set('aorder', DBOrder);
 
-			_axios2.default.post('http://localhost:8282/bookflight/', bodyFormData).then(function (response) {
+			_axios2.default.post('http://ec2-35-163-18-92.us-west-2.compute.amazonaws.com:9393/bookflight/', bodyFormData).then(function (response) {
 				console.log(response);
 			});
 		}
@@ -21271,7 +21266,6 @@ var App = function (_Component) {
 			    FLIGHTID = _state3.FLIGHTID;
 
 
-			console.log("[[[[[[[>>> " + rowsCount.length);
 			var checkPoints = [];
 			var multiplier = 0;
 
@@ -21310,7 +21304,7 @@ var App = function (_Component) {
 					bodyFormData.set('seats', seats);
 					bodyFormData.set('aorder', selected);
 
-					_axios2.default.post('http://localhost:8282/bookflight/', bodyFormData).then(function (response) {
+					_axios2.default.post('http://ec2-35-163-18-92.us-west-2.compute.amazonaws.com:9393/bookflight/', bodyFormData).then(function (response) {
 						console.log(response);
 					});
 
@@ -21342,7 +21336,7 @@ var App = function (_Component) {
 						bodyFormData.set('seats', seats);
 						bodyFormData.set('aorder', selected);
 
-						_axios2.default.post('http://localhost:8282/bookflight/', bodyFormData).then(function (response) {
+						_axios2.default.post('http://ec2-35-163-18-92.us-west-2.compute.amazonaws.com:9393/bookflight/', bodyFormData).then(function (response) {
 							console.log(response);
 						});
 						return;
@@ -22627,10 +22621,6 @@ var BookingList = function (_Component) {
 				'div',
 				{ className: 'collection' },
 				this.props.bookings.map(function (booking) {
-					/*var cName = "collection-item waves-effect waves-light";
-     if (chan.ID == this.state.activeIndex) {
-     	cName = "collection-item waves-effect waves-light active";
-     }*/
 					return _react2.default.createElement(_Booking2.default, {
 						key: booking.Index,
 						booking: booking,
@@ -22699,8 +22689,6 @@ var Channel = function (_Component) {
 		key: 'onClick',
 		value: function onClick(e) {
 			e.preventDefault();
-			/*const {setBooking, booking} = this.props;
-   setChannel(booking);*/
 		}
 	}, {
 		key: 'onClickX',
