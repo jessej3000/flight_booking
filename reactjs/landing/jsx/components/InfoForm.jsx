@@ -20,7 +20,7 @@ class InfoForm extends Component{
 								return(
 									<option 
 										key 	= {flight.ID}
-										value	= {flight.ID} >{flight.Name}  : Departure {flight.Depart} : {flight.Dest} - {flight.Dest}</option>
+										value	= {flight.ID} >{flight.Name}  : Departure {flight.Depart} : {flight.Orig} - {flight.Dest}</option>
 								)
 							})
 							}</select>
