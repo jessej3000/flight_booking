@@ -20628,7 +20628,7 @@ var InfoForm = function (_Component) {
 										'  : Departure ',
 										flight.Depart,
 										' : ',
-										flight.Dest,
+										flight.Orig,
 										' - ',
 										flight.Dest
 									);
