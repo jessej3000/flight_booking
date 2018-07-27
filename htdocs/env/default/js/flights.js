@@ -21153,7 +21153,7 @@ var App = function (_Component) {
 		value: function componentDidMount() {
 			var self = this;
 			(0, _jquery2.default)('button').on('click', function () {
-				_jquery2.default.post('http://localhost:8282/addflight/', {
+				_jquery2.default.post('/addflight/', {
 					plane: (0, _jquery2.default)('#flight_name').val(),
 					departure: (0, _jquery2.default)('#departure').val(),
 					arrival: (0, _jquery2.default)('#arrival').val(),
@@ -21178,7 +21178,7 @@ var App = function (_Component) {
 				});
 			});
 
-			_jquery2.default.get('http://localhost:8282/getflights/', function (data) {
+			_jquery2.default.get('/getflights/', function (data) {
 				console.log(data);
 				var obj = JSON.parse(data);
 				console.log(obj.Payload);
@@ -21200,12 +21200,7 @@ var App = function (_Component) {
 		}
 	}, {
 		key: 'addFlight',
-		value: function addFlight(flightName, departure, arrival, origin, destination) {
-			/*let {flightNameX,departureX,arrivalX,originX,destinationX} = this.state;
-   flights.push({Name: flightName, Depart: departure, Arrive:arrival, Orig: origin, Dest: destination})
-   this.setState(flights)
-   	console.log("Submitting")*/
-		}
+		value: function addFlight(flightName, departure, arrival, origin, destination) {}
 	}, {
 		key: 'deleteFlight',
 		value: function deleteFlight(flight) {
@@ -21213,12 +21208,10 @@ var App = function (_Component) {
 			var bodyFormData = new FormData();
 			bodyFormData.set('id', flight.ID);
 
-			_axios2.default.post('http://localhost:8282/deleteflight/', bodyFormData).then(function (response) {
+			_axios2.default.post('/deleteflight/', bodyFormData).then(function (response) {
 				console.log(response);
 				self.setState({ flights: response.data.Payload });
 			});
-
-			console.log(":::::::::" + flight.ID);
 		}
 	}, {
 		key: 'render',
