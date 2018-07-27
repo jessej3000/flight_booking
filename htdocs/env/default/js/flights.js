@@ -21153,7 +21153,7 @@ var App = function (_Component) {
 		value: function componentDidMount() {
 			var self = this;
 			(0, _jquery2.default)('button').on('click', function () {
-				_jquery2.default.post('/addflight/', {
+				_jquery2.default.post('http://ec2-35-163-18-92.us-west-2.compute.amazonaws.com:9393/addflight/', {
 					plane: (0, _jquery2.default)('#flight_name').val(),
 					departure: (0, _jquery2.default)('#departure').val(),
 					arrival: (0, _jquery2.default)('#arrival').val(),
@@ -21178,7 +21178,7 @@ var App = function (_Component) {
 				});
 			});
 
-			_jquery2.default.get('/getflights/', function (data) {
+			_jquery2.default.get('http://ec2-35-163-18-92.us-west-2.compute.amazonaws.com:9393/getflights/', function (data) {
 				console.log(data);
 				var obj = JSON.parse(data);
 				console.log(obj.Payload);
@@ -21208,7 +21208,7 @@ var App = function (_Component) {
 			var bodyFormData = new FormData();
 			bodyFormData.set('id', flight.ID);
 
-			_axios2.default.post('/deleteflight/', bodyFormData).then(function (response) {
+			_axios2.default.post('http://ec2-35-163-18-92.us-west-2.compute.amazonaws.com:9393/deleteflight/', bodyFormData).then(function (response) {
 				console.log(response);
 				self.setState({ flights: response.data.Payload });
 			});
