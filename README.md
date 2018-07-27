@@ -4,6 +4,10 @@ by JVJ
 
 Simple flight booking app using ReactJs and Golang
 
+# Presentation
+
+https://youtu.be/r1ltFcMZzFg
+
 # Installation
 
 1. Front-End
