@@ -34,11 +34,13 @@ class App extends Component{
 		var bodyFormData = new FormData();
 		bodyFormData.set('flightid', flightID);
 
-		axios.post('http://localhost:8282/getbookingslist/',
+		axios.post('/getbookingslist/',
 		bodyFormData
 			)
 		 .then(function (response) {
-			tmpBookings = response.data.Payload.Bookings;
+		 	if(response.data.Payload.Bookings != null){
+				tmpBookings = response.data.Payload.Bookings;
+			}
 			seats = response.data.Payload.Seats.split(",");
 			seatOrder = response.data.Payload.Order.split(",");
 
