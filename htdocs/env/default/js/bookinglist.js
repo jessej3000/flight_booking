@@ -21168,8 +21168,10 @@ var App = function (_Component) {
 			var bodyFormData = new FormData();
 			bodyFormData.set('flightid', flightID);
 
-			_axios2.default.post('http://ec2-35-163-18-92.us-west-2.compute.amazonaws.com:9393/getbookingslist/', bodyFormData).then(function (response) {
-				tmpBookings = response.data.Payload.Bookings;
+			_axios2.default.post('/getbookingslist/', bodyFormData).then(function (response) {
+				if (response.data.Payload.Bookings != null) {
+					tmpBookings = response.data.Payload.Bookings;
+				}
 				seats = response.data.Payload.Seats.split(",");
 				seatOrder = response.data.Payload.Order.split(",");
 
