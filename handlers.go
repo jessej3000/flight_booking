@@ -162,8 +162,16 @@ func showAdmin(w http.ResponseWriter, r *http.Request) {
 
 // Description : Handles web request for booking
 func showBooking(w http.ResponseWriter, r *http.Request) {
-	Data := pageSettings{"isAdmin": false, "isBooking": true, "isBookNow": false}
-	err := gtl.ExecuteTemplate(w, "index.gtl", Data)
+	results, err := getAllFlights()
+	if err != nil {
+		fmt.Println(err)
+		returnMsg := mainResult{Code: 4, Payload: nil, Message: "Unable to get data."}
+		json.NewEncoder(w).Encode(returnMsg)
+		return
+	}
+
+	Data := pageSettings{"isAdmin": false, "isBooking": true, "isBookNow": false, "isBookingList": false, "flights": results}
+	err = gtl.ExecuteTemplate(w, "index.gtl", Data)
 	if err != nil {
 		log.Fatal(err)
 	}

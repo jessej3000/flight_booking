@@ -25,7 +25,7 @@ func init() {
 	gtl = template.Must(template.New("").Funcs(functionMap).ParseGlob(serverConfig.Htdocs + "/env/" + serverConfig.Env + "/*.gtl"))
 
 	// Initialize database
-	db, err = sql.Open("mysql", DBUser+":@tcp("+DBHost+":"+DBPort+")/"+DBName)
+	db, err = sql.Open("mysql", DBUser+":"+DBPassword+"@tcp("+DBHost+":"+DBPort+")/"+DBName)
 	if err != nil {
 		log.Fatal(err)
 	}
