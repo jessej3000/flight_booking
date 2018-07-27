@@ -1,4 +1,7 @@
 {{template "header.gtl"}}
+  <script>
+    flightsDB = {{.flights}}
+  </script>
   {{template "nav-top.gtl"}}
   <div id="app" class="container">
   </div>
