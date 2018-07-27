@@ -20452,7 +20452,7 @@ var App = function (_Component) {
 		key: 'componentDidMount',
 		value: function componentDidMount() {
 			var self = this;
-			_jquery2.default.get('/getflights/', function (data) {
+			_jquery2.default.get('http://ec2-35-163-18-92.us-west-2.compute.amazonaws.com:9393/getflights/', function (data) {
 				console.log(data);
 				var obj = JSON.parse(data);
 				console.log(obj.Payload);
