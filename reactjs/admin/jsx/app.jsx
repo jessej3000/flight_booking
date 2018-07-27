@@ -26,7 +26,7 @@ class App extends Component{
 	componentDidMount(){
 		var self = this;
 		$('button').on('click',function(){
-			$.post( 'http://localhost:8282/addflight/', 
+			$.post( 'http://ec2-35-163-18-92.us-west-2.compute.amazonaws.com:9393/addflight/', 
 				{ 
 					plane: $('#flight_name').val(),
 					departure: $('#departure').val(),
@@ -53,7 +53,7 @@ class App extends Component{
 			});
 		})
 
-		$.get( 'http://localhost:8282/getflights/', function( data ) {
+		$.get( 'http://ec2-35-163-18-92.us-west-2.compute.amazonaws.com:9393/getflights/', function( data ) {
 		  	console.log(data)
 			var obj = JSON.parse(data);
 		    console.log(obj.Payload);
@@ -79,7 +79,7 @@ class App extends Component{
 		var bodyFormData = new FormData();
 		bodyFormData.set('id', flight.ID);
 
-		axios.post('http://localhost:8282/deleteflight/',
+		axios.post('http://ec2-35-163-18-92.us-west-2.compute.amazonaws.com:9393/deleteflight/',
 		bodyFormData
 			)
 		 .then(function (response) {
