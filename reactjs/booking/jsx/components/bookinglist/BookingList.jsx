@@ -18,10 +18,6 @@ class BookingList extends Component{
 		return(
 			<div className="collection">{
 				this.props.bookings.map(booking=>{
-					/*var cName = "collection-item waves-effect waves-light";
-					if (chan.ID == this.state.activeIndex) {
-						cName = "collection-item waves-effect waves-light active";
-					}*/
 					return(
 						<Booking
 							key = {booking.Index}

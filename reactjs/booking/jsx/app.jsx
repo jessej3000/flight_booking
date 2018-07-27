@@ -9,8 +9,8 @@ class App extends Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			seatsInRow: seatsPerRow,//[0,0,0,0,0,0,0,0,0,0],//
-			rowsCount: numberOfRows,//[0,0,0],//
+			seatsInRow: seatsPerRow,
+			rowsCount: numberOfRows,
 			seats: seatIndexes,
 			selected: assignmentOrder,
 			abc: ['A','B','C','D','E','F','G','H','I','J'],
@@ -22,15 +22,11 @@ class App extends Component{
 		};
 	}
 	componentDidMount(){
-		/*let {seats,selected,names} = this.state
-
-		console.log(":::: " + names)*/
 	}
 	setBooking(){
 		
 	}
 	addBooking(bookingInfo){
-		//console.log(bookingInfo);
 	}
 	deleteBooking(booking){
 		let {names,seats,selected,FLIGHTID} = this.state;
@@ -65,7 +61,7 @@ class App extends Component{
 		bodyFormData.set('seats', seats);
 		bodyFormData.set('aorder', selected);
 
-		axios.post('http://localhost:8282/bookflight/',
+		axios.post('http://ec2-35-163-18-92.us-west-2.compute.amazonaws.com:9393/bookflight/',
 			bodyFormData)
 			 .then(function (response) {
 			   console.log(response);
@@ -109,7 +105,7 @@ class App extends Component{
 		bodyFormData.set('seats', DBSeats);
 		bodyFormData.set('aorder', DBOrder);
 
-		axios.post('http://localhost:8282/bookflight/',
+		axios.post('http://ec2-35-163-18-92.us-west-2.compute.amazonaws.com:9393/bookflight/',
 			bodyFormData)
 			 .then(function (response) {
 			   console.log(response);
@@ -157,7 +153,7 @@ class App extends Component{
 				bodyFormData.set('seats', seats);
 				bodyFormData.set('aorder', selected);
 
-				axios.post('http://localhost:8282/bookflight/',
+				axios.post('http://ec2-35-163-18-92.us-west-2.compute.amazonaws.com:9393/bookflight/',
 					bodyFormData)
 					 .then(function (response) {
 					   console.log(response);
@@ -191,7 +187,7 @@ class App extends Component{
 					bodyFormData.set('seats', seats);
 					bodyFormData.set('aorder', selected);
 
-					axios.post('http://localhost:8282/bookflight/',
+					axios.post('http://ec2-35-163-18-92.us-west-2.compute.amazonaws.com:9393/bookflight/',
 						bodyFormData)
 						 .then(function (response) {
 						   console.log(response);

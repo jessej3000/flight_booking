@@ -4,8 +4,6 @@ import PropTypes from 'prop-types';
 class Channel extends Component{
 	onClick(e){
 		e.preventDefault();
-		/*const {setBooking, booking} = this.props;
-		setChannel(booking);*/
 	}
 	onClickX(e){
 		e.preventDefault();
