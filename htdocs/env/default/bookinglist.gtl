@@ -1,0 +1,10 @@
+{{template "header.gtl"}}
+
+  <script>
+    flightsFromDB = {{.flights}}
+  </script>
+  {{template "nav-top.gtl"}}
+  <div id="app" class="">
+  </div>
+
+{{template "footer.gtl" .}}

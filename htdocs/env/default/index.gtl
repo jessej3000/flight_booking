@@ -1,0 +1,6 @@
+{{template "header.gtl"}}
+  {{template "nav-top.gtl"}}
+  <div id="app" class="container">
+  </div>
+
+{{template "footer.gtl" .}}

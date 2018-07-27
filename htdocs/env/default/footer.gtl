@@ -1,0 +1,47 @@
+</body>
+</html>
+
+{{if .isAdmin}}
+  <script type="application/javascript" src="/js/flights.js" ></script>
+{{end}}
+{{if .isBooking}}
+  <script type="application/javascript" src="/js/landing.js" ></script>
+{{end}}
+{{if .isBookNow}}
+  <script type="application/javascript" src="/js/booking.js" ></script>
+{{end}}
+{{if .isBookingList}}
+  <script type="application/javascript" src="/js/bookinglist.js" ></script>
+{{end}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+{{if .isAdmin}}
+  <script>
+  	$(document).ready(function(){
+  		$('.timepicker').timepicker();
+  	});
+  	$(document).ready(function(){
+  		$('select').formSelect();
+  	});
+  </script>
+{{end}}
+{{if .isBooking}}
+  <script>
+    $(document).ready(function(){
+      $('.datepicker').datepicker();
+    });
+    $(document).ready(function(){
+  		$('select').formSelect();
+  	});
+  </script>
+{{end}}
+{{if .isBookingList}}
+  <script>
+    $(document).ready(function(){
+      $('.collapsible').collapsible();
+    });
+    $(document).ready(function(){
+  		$('select').formSelect();
+  	});
+  </script>
+{{end}}

@@ -1,0 +1,10 @@
+<nav style="box-shadow:0 0 0 0;background-color:white;">
+    <div class="nav-wrapper">
+      <a href="/admin/" class="brand-logo"  style="color:grey;"><i class="large material-icons">airplanemode_active</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/admin/" style="color:grey;">Admin</a></li>
+        <li><a href="/booking/" style="color:grey;">Booking</a></li>
+        <li><a href="/bookinglist/" style="color:grey;">Booking List</a></li>
+      </ul>
+    </div>
+  </nav>

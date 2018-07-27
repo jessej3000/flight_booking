@@ -1,0 +1,51 @@
+{{template "header.gtl" .}}
+
+  <script>
+    var seatsPerRow = new Array({{.seatsRow}})
+    var numberOfRows = new Array({{.rows}})
+    var tmpAssignmentOrder = {{.assignmentOrder}}
+    var tmpSeatIndexes  = {{.seatIndexes}}
+    var bookedPassengers = {{.names}}
+    if(bookedPassengers==null){
+      bookedPassengers = [];
+    }
+
+    var FlightID = {{.FlightID}}
+    var ClientID = {{.ClientID}}
+    var ClientName = {{.ClientName}}
+
+    var assignmentOrder = tmpAssignmentOrder.split(",")
+    var seatIndexes  = tmpSeatIndexes.split(",")
+
+    for(var i=0; i<seatsPerRow.length; i++){
+      seatsPerRow[i] = 0;
+    }
+    for(var j=0; j<numberOfRows.length; j++){
+      numberOfRows[j] = 0;
+    }
+
+    //===== Fix Bookings
+		var tmpNames = [];
+		for(var i=0; i<seatIndexes.length; i++){
+			for(var j=0; j<bookedPassengers.length; j++){
+				if(seatIndexes[i]==bookedPassengers[j].ID){
+          var tmp = {
+            ID: bookedPassengers[j].ID,
+            Name: bookedPassengers[j].Name,
+            Index: i
+          };
+					tmpNames.push(tmp);
+				}
+			}
+		}
+
+    bookedPassengers = [];
+
+		bookedPassengers = tmpNames;
+  </script>
+  {{template "nav-top.gtl"}}
+  <div id="app" class="">
+  </div>
+
+
+{{template "footer.gtl" .}}
